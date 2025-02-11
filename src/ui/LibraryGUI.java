@@ -52,14 +52,29 @@ public class LibraryGUI extends JFrame {
 
         add(inputPanel, BorderLayout.NORTH);
 
-        JPanel searchPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 5));
-        searchField = new JTextField(25);
-        searchPanel.add(searchField);
+        JPanel searchPanel = new JPanel(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.gridwidth = 2;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.insets = new Insets(5, 5, 5, 5);
 
-        JButton searchTitleButton = new JButton("Search by Title");
-        JButton searchAuthorButton = new JButton("Search by Author");
-        searchPanel.add(searchTitleButton);
-        searchPanel.add(searchAuthorButton);
+        searchField = new JTextField();
+        searchField.setPreferredSize(new Dimension(300, 25));
+        searchPanel.add(searchField, gbc);
+
+        gbc.gridy++;
+        gbc.gridwidth = 1;
+
+        JButton searchByTitleButton = new JButton("Search by Title");
+        JButton searchByAuthorButton = new JButton("Search by Author");
+
+        searchPanel.add(searchByTitleButton, gbc);
+
+        gbc.gridx++;
+        searchPanel.add(searchByAuthorButton, gbc);
+
 
         add(searchPanel, BorderLayout.CENTER);
 
@@ -76,8 +91,8 @@ public class LibraryGUI extends JFrame {
 
         addButton.addActionListener(e -> addBook());
         removeButton.addActionListener(e -> removeBook());
-        searchTitleButton.addActionListener(e -> searchBookByTitle());
-        searchAuthorButton.addActionListener(e -> searchBookByAuthor());
+        searchByTitleButton.addActionListener(e -> searchBookByTitle());
+        searchByAuthorButton.addActionListener(e -> searchBookByAuthor());
 
         setVisible(true);
     }
