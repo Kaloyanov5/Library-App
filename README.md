@@ -19,7 +19,7 @@ A Java-based Library Management System with a **GUI (Swing)**, supporting **In-M
 
 Clone the repository to your local machine:
 ``` bash
-git clone https://github.com/Kaloyanov5/Library-System.git
+git clone https://github.com/Kaloyanov5/Library-App.git
 cd Library-System
 ```
 ### 2️⃣ Download JDBC Driver
