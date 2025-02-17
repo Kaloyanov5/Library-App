@@ -56,7 +56,7 @@ public class DatabaseBookRepository implements BookRepository{
             stmt.setInt(3, book.getYearPublished());
             stmt.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 
@@ -71,7 +71,7 @@ public class DatabaseBookRepository implements BookRepository{
             stmt.executeUpdate();
             return true;
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
             return false;
         }
     }
@@ -97,7 +97,7 @@ public class DatabaseBookRepository implements BookRepository{
                 ));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
 
         return foundBooks;
@@ -124,7 +124,7 @@ public class DatabaseBookRepository implements BookRepository{
                 ));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
 
         return foundBooks;
